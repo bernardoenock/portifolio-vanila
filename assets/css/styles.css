@@ -1,7 +1,10 @@
+/* Import de font (Roboto, ) */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+/* cdn de icons => https://fontawesome.com/search */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
+/* Global Style */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +12,15 @@
   text-decoration: none;
 }
 
+/* Variaveis globais */
 :root {
   --font-primary: "Roboto", sans-serif;
 }
 
+/* Hamburguer Menu 
+A class .show-menu é criada no script index.js line: 2-6 
+*/
 .hamburguer {
-  /* background-color: blue; */
   width: 2rem;
   height: 2rem;
   position: fixed;
@@ -38,7 +44,7 @@
   right: 16rem;
 }
 
-/* Span hemburguer menu {fechar} */
+/* Span tag hemburguer menu {fechar} */
 .hamburguer span {
   position: absolute;
   left: 3rem;
@@ -98,6 +104,7 @@ header {
   overflow: hidden;
 }
 
+/* Imagem banner */
 .img-wrapper {
   width: 100%;
   height: 100%;
@@ -176,17 +183,20 @@ header {
   }
 }
 
+/* Menu lateral */
 .sidebar {
   width: 20rem;
   height: 100vh;
   background-color: #ffffff;
   position: fixed;
   top: 0;
+  /* Esconde */
   right: -20rem;
   transition: all 0.8s;
 }
 
 .show-menu .sidebar {
+  /* Aparece */
   right: 0;
 }
 
@@ -239,4 +249,96 @@ header {
 .social-media i:hover {
   color: #ffffff;
   background-color: #d13b3b;
+}
+
+/* section acquirements */
+.section-acquirements {
+  background-color: #000;
+}
+
+/* section header titulo */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-header h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  color: #fff;
+  border-bottom: solid 3px #d13b3b;
+  margin-bottom: 1.5rem;
+}
+
+.acquirement-header {
+  display: flex;
+  align-items: center;
+  color: rgb(237, 63, 63);
+}
+.acquirement-header i {
+  font-size: 2rem;
+  color: #d13b3b;
+}
+.acquirement-header h3 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  padding-left: 1rem;
+  color: #fff;
+}
+.acquirement-text {
+  font-family: var(--font-primary);
+  margin-top: 1rem;
+  color: #fff;
+}
+
+/* div que engloba todos acquirements */
+.acquirements {
+  /* https://www.w3schools.com/css/css_grid.asp */
+  display: grid;
+  /*Separa em 16 colunas*/
+  grid-template-columns: repeat(16, 1fr);
+  /*Define o tamanho das linhas de 6 colunas*/
+  grid-template-rows: repeat(6, 6rem);
+  row-gap: 0.5rem;
+}
+
+/* cards acquirements */
+.acquirement:nth-child(1) {
+  grid-column: 4 / 7;
+  grid-row: 1 / 3;
+}
+.acquirement:nth-child(2) {
+  grid-column: 3 / 6;
+  grid-row: 3 / 5;
+}
+.acquirement:nth-child(3) {
+  grid-column: 4 / 7;
+  grid-row: 5 / -1;
+}
+.acquirement:nth-child(4) {
+  grid-column: 11 / 14;
+  grid-row: 1 / 3;
+  z-index: 0;
+}
+.acquirement:nth-child(5) {
+  grid-column: 12 / 15;
+  grid-row: 3 / 5;
+  z-index: 0;
+}
+.acquirement:nth-child(6) {
+  grid-column: 11 / 14;
+  grid-row: 5 / -1;
+  z-index: 0;
+}
+
+/* Posicionando a img ilustrativa conhecimentos */
+.acquirements-img-wrapper {
+  grid-column: 6 / 12;
+  grid-row: 3 / 8;
+  width: 100%;
+}
+.acquirements-img-wrapper img {
+  object-fit: cover;
+  width: 100%;
 }
